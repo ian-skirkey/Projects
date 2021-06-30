@@ -8,10 +8,6 @@
 #include "prog5.h"
 
 
-/*
- * You will need to keep track of the solution code using file scope
- * variables as well as the guess number.
- */
 
 static int guess_number;
 static int solution1;
