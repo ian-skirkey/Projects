@@ -1,19 +1,4 @@
-/*			
- *
- * prog5.c - source file adapted from UIUC ECE198KL Spring 2013 Program 4
- *           student code -- GOLD VERSION by Steven S. Lumetta
- */
-
-
-/*
- * The functions that you must write are defined in the header file.
- * Blank function prototypes with explanatory headers are provided
- * in this file to help you get started.
- */
- 
- 
- 
- /* This program implements a game where the user attepts to guess a four digit number which the computer generates using a user input seed value. The user has twelve guesses before the program halts and they lose the game. On each valid guess attempt, the computer displays the number of perfect matches and the number of misplaced matches which were in that guess. */
+  /* This program implements a game where the user attepts to guess a four digit number which the computer generates using a user input seed value. The user has twelve guesses before the program halts and they lose the game. On each valid guess attempt, the computer displays the number of perfect matches and the number of misplaced matches which were in that guess. */
 
 
 
