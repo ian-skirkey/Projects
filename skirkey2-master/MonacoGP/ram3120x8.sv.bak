@@ -1,0 +1,15 @@
+module ram3120x8 ( output logic [7:0] q,
+						 input [7:0] d,
+						 input [11:0] write_address, read_address,
+						 input we, clk );
+			
+logic [7:0] c_ptr [3119:0];
+
+always_ff @ (posedge clk) begin
+		if (we)
+			c_ptr[write_address] <= d;
+		
+		q <= c_ptr[read_address];
+end
+			
+endmodule 

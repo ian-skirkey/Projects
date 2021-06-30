@@ -1,0 +1,52 @@
+module testbench1();
+						 
+timeunit 10ns ;
+
+timeprecision 1ns ;
+
+logic CLK;
+logic RESET;
+logic AES_START;
+logic AES_DONE;
+logic [127:0] AES_KEY;
+logic [127:0] AES_MSG_ENC;
+logic [127:0] AES_MSG_DEC;
+logic [127:0] msgstate; 
+logic [127:0] addround;
+logic [127:0] shiftedrow;
+logic [127:0] submsg;
+logic [2:0] counter;
+logic [3:0] roundctr;
+logic [31:0] msgb1, msgb2, msgb3, msgb4;
+
+
+AES test(.*);
+
+always begin : CLOCK_GENERATION
+#1 CLK = ~CLK;
+end
+
+initial begin : CLOCK_INITIALIZATION
+	CLK = 0;
+end
+
+initial begin : TEST_VECTORS
+
+#1 AES_MSG_ENC = 128'hdaec3055df058e1c39e814ea76f6747e;
+#1 AES_KEY = 128'h000102030405060708090a0b0c0d0e0f;
+
+#40;
+
+#1 RESET = 1'b1;
+#2 RESET = 1'b0;
+#10 AES_DONE = 1'b0;
+#1 AES_START = 1'b1;
+
+#40;
+
+end
+						 
+						 
+						 
+						 
+endmodule 

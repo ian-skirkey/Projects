@@ -1,0 +1,16 @@
+module gamestate (input DrawCar,
+						input DrawNPC,
+						output gamereset
+						);
+
+always_comb begin
+	if (DrawCar & DrawNPC)
+	gamereset = 1'b1;
+	else
+	gamereset = 1'b0;
+end
+
+
+
+
+endmodule 
